@@ -4,14 +4,13 @@
 /**
  * main- This program prints alphabet in lower case
  *
- * Return: 0 always
  * main - Print alphabet in lower case
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-        int ch;
+	int ch;
 
         for (ch = 'a'; ch <= 'z'; ch++)
 	{
@@ -20,5 +19,4 @@ int main(void)
 	putchar('\n');
 
 	return (0);
-
 }

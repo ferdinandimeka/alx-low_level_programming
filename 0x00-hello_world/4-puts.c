@@ -7,9 +7,7 @@
  */
 int main(void)
 {
-char app[51];
-strcpy(app, "\"Programming is like building a multilingual puzzle");
-puts(app);
-    return (0);
+puts("\"Programming is like building a multilingual puzzle");
+return (0);
 }
 

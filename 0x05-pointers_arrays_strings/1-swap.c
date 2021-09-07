@@ -2,14 +2,17 @@
 #include <stdio.h>
 
 /**
- * swap - swaps the values of two integers and prints them
- * @a: pointer
- * @b: pointer
+ * swap_int - swaps the values of two integers and prints them
+ * @a: first pointer value
+ * @b: second pointer value
  *
  * Return: void
  */
- void swap_int(int *a, int*b)
+void swap_int(int *a, int*b)
 {
-	*a = 42;
-	*b = 98;
+	int ch;
+
+	ch = *a;
+	*a = *b;
+	*b = ch;
 }

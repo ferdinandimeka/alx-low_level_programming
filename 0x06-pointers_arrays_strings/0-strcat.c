@@ -9,7 +9,7 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int ch; int sh;
+	int ch, sh;
 
 	ch = 0;
 	sh = 0;
@@ -22,7 +22,6 @@ char *_strcat(char *dest, char *src)
 	dest[ch + sh] = src[sh];
 	sh++;
 	}
-	
 	dest[ch + sh] = 0;
 	return (dest);
 }

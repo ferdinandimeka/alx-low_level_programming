@@ -1,3 +1,5 @@
-1. 0-strcat concatenates two strings.
-2. 1-strncat.c concatenates two strings.
+0. 0-strcat.c concatenates two strings.
+1. 1-strncat.c concatenates two strings.
+2. 3-strcmp.c compares two strings.
+3. 4-rev_array.c reverses the content of an array of integers
 

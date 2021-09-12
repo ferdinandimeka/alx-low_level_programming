@@ -23,9 +23,9 @@ void reverse_array(int *a, int n)
 {
 	int rev = 0;
 
-	while (rev < n /2)
+	while (rev < n / 2)
 	{
-	swap_int(a + rev, a + (n - rev -1));
+	swap_int(a + rev, a + (n - rev - 1));
 	rev++;
 	}
 }

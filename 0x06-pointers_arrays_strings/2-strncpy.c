@@ -4,7 +4,7 @@
  * _strncpy - copies a string
  * @dest: first pointer
  * @src: second pointer
- * @n: size_t 
+ * @n: size_t
  *
  * Return: string values
  */
@@ -17,5 +17,5 @@ char *_strncpy(char *dest, char *src, int n)
 	for ( ; i < n; i++)
 	dest[i] = '\0';
 
-	return dest;
+	return (dest);
 }

@@ -22,12 +22,13 @@ int _sqrt(int n, int i)
 
 /**
  * _sqrt_recursion - returns the natural square root of a number
- * @n: integer 
+ * @n: integer
  *
  * Return: integer value
  */
 int _sqrt_recursion(int n)
 {
 	int i = 0;
+
 	return (_sqrt(n, i));
 }

@@ -2,12 +2,12 @@
 #include <string.h>
 /**
  * main - puts char
- * Description: prints "Programming is like building a multilingual puzzle"
- * return: always i0 (Success)
+ * Description: prints a string
+ * return: always 0 (Success)
  */
 int main(void)
 {
-puts("\"Programming is like building a multilingual puzzle");
-return (0);
+        puts("\"Programming is like building a multilingual puzzle\n");
+        return (0);
 }
 

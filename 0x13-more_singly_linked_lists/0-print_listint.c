@@ -5,7 +5,6 @@
 * @h: The linked list where we will use to print its elements
 * Return: The number of elements in the lined list
 */
-
 size_t print_listint (const listint_t *h)
 {
 	size_t i = 0;

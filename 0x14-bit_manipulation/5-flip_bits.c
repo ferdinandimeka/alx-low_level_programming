@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * flip_bits - gets the number of bits you would need to flip
@@ -17,8 +17,8 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	while (n)
 	{
-		count += n & 1;
-		n >>= 1;
+	count += n & 1;
+	n >>= 1;
 	}
 	return (count);
 }

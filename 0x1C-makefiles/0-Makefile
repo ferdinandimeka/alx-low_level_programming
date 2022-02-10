@@ -1,3 +1,10 @@
-all:
-	main.c school.c
-	gcc main.c school.c -o school
+all: school
+
+school: main.o school.o
+	gcc -Wall -Werror -o factorial main.o school.o
+
+main.o: main.c m.h
+	gcc -Wall -Werror -c main.c
+
+school.o: school.c m.h
+	gcc -Wall -Werror -c school.c

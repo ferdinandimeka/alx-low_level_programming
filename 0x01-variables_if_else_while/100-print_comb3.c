@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 
 /**
  * main - all possible different combinatons of two digit
@@ -9,12 +11,37 @@
  */
 int main(void)
 {
-	int num;
+	int i;
+	int j;
 
-	for (num = 01; ch <= 09; ch++)
+	i = 48;
+	j = 49;
+	while  ((i < 57) && (j < 58))
 	{
-	
-	}
-	
+		putchar(i);
+		putchar(j);
+		if ((i == 56) && (j == 57))
+		{
+			putchar('\n');
+			i++;
+			j++;
+		}
+		else
+		{
+			putchar(44);
+			putchar(32);
+			if (j < 57)
+			{
+				j++;
+			}
+			else
+			{
+				i++;
+				j = 1 + i;
+			}
+		}
 
+	}
+
+	return (0);
 }

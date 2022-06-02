@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <unistd.h>
 /**
- * description:
+ * main: Entry point
+ * 
+ * description: A c program that prints a string
+ * return: 0
  */
 int main(void)
 {

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 /**
- * description: 
+ * description:
  */
 int main(void)
 {

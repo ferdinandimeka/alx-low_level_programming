@@ -2,8 +2,13 @@
 #include <unistd.h>
 /**
  * main - Entry point
+<<<<<<< HEAD
  * description: prints a string value
  * Return: 1 on success
+=======
+ * Description: A c program that prints a string
+ * Return: Always 0
+>>>>>>> bc9b1ba6fb9a10a7ae6ba7b5dc12f0d451a0184c
  */
 int main(void)
 {

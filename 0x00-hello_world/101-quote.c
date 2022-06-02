@@ -3,7 +3,6 @@
 /**
  * main - Entry point
  * Description: A c program that prints a string
- * 
  * Return: Always 0
  */
 int main(void)

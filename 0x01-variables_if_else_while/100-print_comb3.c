@@ -4,7 +4,7 @@
 
 /**
  * main - all possible different combinatons of two digit
- * Description: print all numbers from 01-09, and from 
+ * Description: print all numbers from 01-09, and from
  * 12 to 89 separated with whitespaces and commas.
  *
  * Return: 0 (Success)

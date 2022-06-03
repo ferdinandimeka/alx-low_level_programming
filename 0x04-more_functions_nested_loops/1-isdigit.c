@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * main - check for a digit.
+ * _isdigit - check for a digit.
  * @c: integer.
  * Return: 0.
  */

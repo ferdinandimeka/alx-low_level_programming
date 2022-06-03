@@ -1,21 +1,20 @@
 #include "main.h"
 
 /**
- * main - print numbers from 0 to 9 omitting 2 and 4.
- * @c: integers
+ * print_most_numbers - print numbers from 0 to 9 omitting 2 and 4.
  * Return: 0.
  */
 void print_most_numbers(void)
 {
-	char c;
+	int c;
 
-        while (c <= '9')
+        for (c = 48; c < 58; c++)
 	{
-	while ((c != '2') && (c != '4'))
-	{
-	_putchar(c);
+		if ((c == 50) || (c == 52))
+		{
+			continue;
+		}
+		_putchar(c);
 	}
-	c++;
-	}
-	_putchar('\n');
+	_putchar(10);
 }

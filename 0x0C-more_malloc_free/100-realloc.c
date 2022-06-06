@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
 * _memcpy - copies memory area.
 * @dest: memory area to overwrite
@@ -9,17 +8,16 @@
 * @n: numbers of bytes from memory area
 * Return: char dest
 */
-
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-        unsigned int cont = 0;
+unsigned int cont = 0;
 
-        while (cont < n)
-        {
-        dest[cont] = src[cont];
-        cont++;
-        }
-        return (dest);
+while (cont < n)
+{
+dest[cont] = src[cont];
+cont++;
+}
+return (dest);
 }
 /**
 * _realloc -  function that reallocates a memory block using malloc and free
@@ -32,36 +30,36 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-        void *p;
+void *p;
 
-        if (new_size == old_size)
-        return (ptr);
+if (new_size == old_size)
+return (ptr);
 
-        if (new_size == 0 && ptr != NULL)
-        {
-        free(ptr);
-        return (NULL);
-        }
+if (new_size == 0 && ptr != NULL)
+{
+free(ptr);
+return (NULL);
+}
 
-        if (ptr == NULL)
-        {
-        p = malloc(new_size);
-        if (p == NULL)
-        {
-        free(ptr);
-        return (NULL);
-        }
-        free(ptr);
-        return (p);
-        }
-        p = malloc(new_size);
-        if (p == NULL)
-        {
-        free(ptr);
-        return (NULL);
-        }
-        if (new_size > old_size)
-        _memcpy(p, ptr, old_size);
-        free(ptr);
-        return (p);
+if (ptr == NULL)
+{
+p = malloc(new_size);
+if (p == NULL)
+{
+free(ptr);
+return (NULL);
+}
+free(ptr);
+return (p);
+}
+p = malloc(new_size);
+if (p == NULL)
+{
+free(ptr);
+return (NULL);
+}
+if (new_size > old_size)
+_memcpy(p, ptr, old_size);
+free(ptr);
+return (p);
 }

@@ -1,64 +1,49 @@
 #include "search_algos.h"
 
-/**
- * rec_search - searches for a value in an array of
- * integers using the Binary search algorithm
- *
- *
- * @array: input array
- * @size: size of the array
- * @value: value to search in
- * Return: index of the number
- */
-int rec_search(int *array, size_t size, int value)
-{
-	size_t half = size / 2;
-	size_t i;
-
-	if (array == NULL || size == 0)
-		return (-1);
-
-	printf("Searching in array");
-
-	for (i = 0; i < size; i++)
-		printf("%s %d", (i == 0) ? ":" : ",", array[i]);
-
-	printf("\n");
-
-	if (half && size % 2 == 0)
-		half--;
-
-	if (value == array[half])
-	{
-		if (half > 0)
-			return (rec_search(array, half + 1, value));
-		return ((int)half);
-	}
-
-	if (value < array[half])
-		return (rec_search(array, half + 1, value));
-
-	half++;
-	return (rec_search(array + half, size - half, value) + half);
-}
+int recurse_helper(int *array, size_t left,
+size_t right, int value, ssize_t *match);
 
 /**
- * advanced_binary - calls to rec_search to return
- * the index of the number
+ * advanced_binary - search for value in array of sorted ints
+ * @array: array to search
+ * @size: size of array
+ * @value: value to search
  *
- * @array: input array
- * @size: size of the array
- * @value: value to search in
- * Return: index of the number
+ * Return: index of found value; or -1 if not found
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-	int index;
+	ssize_t match = -1;
 
-	index = rec_search(array, size, value);
-
-	if (index >= 0 && array[index] != value)
+	if (array == NULL)
 		return (-1);
 
-	return (index);
+	return (recurse_helper(array, 0, size - 1, value, &match));
 }
+
+/**
+ * recurse_helper - recursive implement of binary search
+ * @array: array to search
+ * @left: leftmost index
+ * @right: rightmost index
+ * @value: value to search
+ * @match: pointer to index of most recent match
+ *
+ * Return: index of found value; or -1 if not found
+ */
+int recurse_helper(int *array, size_t left,
+size_t right, int value, ssize_t *match)
+{
+	size_t i = left, mid;
+
+	if (left > right)
+		return (*match);
+
+	/* print search progress */
+	printf("Searching in array: %d", array[i++]);
+	while (i <= right)
+		printf(", %d", array[i++]);
+	printf("\n");
+
+	/* calculate mid */
+

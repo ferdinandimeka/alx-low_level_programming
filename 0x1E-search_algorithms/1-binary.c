@@ -1,60 +1,58 @@
 #include "search_algos.h"
 
-/**
- * recursive_search - searches for a value in an array of
- * integers using the Binary search algorithm
- * @array: input array
- * @size: size of the array
- * @value: value to search in
- * 
- * Return: index of the number
- */
-int recursiveSearch(int *array, size_t size, int value)
-{
-  size_t i;
-  size_t mid;
-
-  mid = size / 2;
-  if (array == NULL || size == 0)
-    return (-1);
-
-  printf("Searching in array");
-  for (i = 0; i < size; i++)
-    printf("%s %d", (i == 0) ? ":" : ",", array[i]);
-
-  printf("\n");
-
-    if (mid && size % 2 == 0)
-      mid--;
-
-    if (value == array[mid])
-      return ((int)mid);
-
-    if (value < array[mid])
-      return (recursiveSearch(array, mid, value));
-    mid++;
-
-    return (recursiveSearch(array + mid, size - mid, value) + mid);
-}
+int recurse_helper(int *array, size_t left, size_t right, int value);
 
 /**
- * binary_search - a function that searches for a value in a sorted array of integers.
- * @array: is a pointer to the first element of the array to search in.
- * @size: is the number of the element in the array.
- * @value: is the value to search for.
- * 
- * Description - You can assume the array will be sorted in an ascending order, you can assume that value won't appear more than once in an array, you must print the array being searched everytime it changes.
- * 
- * Return: your function must return the index where the value is located, and if the value is not present in array or if array is NULL, return -1.  
+ * binary_search - search for value in array of sorted ints
+ * @array: array to search
+ * @size: size of array
+ * @value: value to search
+ *
+ * Return: index of found value; or -1 if not found
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int idx;
-
-	idx = recursiveSearch(array, size, value);
-
-	if (idx >= 0 && array[idx] != value)
+	if (array == NULL)
 		return (-1);
 
-	return (idx);
+	return (recurse_helper(array, 0, size - 1, value));
+}
+
+/**
+ * recurse_helper - recursive implement of binary search
+ * @array: array to search
+ * @left: leftmost index
+ * @right: rightmost index
+ * @value: value to search
+ *
+ * Return: index of found value; or -1 if not found
+ */
+int recurse_helper(int *array, size_t left, size_t right, int value)
+{
+	size_t i = left, mid;
+
+	if (left > right)
+		return (-1);
+
+	/* print search progress */
+	printf("Searching in array: %d", array[i++]);
+	while (i <= right)
+		printf(", %d", array[i++]);
+	printf("\n");
+
+	/* calculate mid */
+	mid = left + ((right - left) / 2);
+
+	/* check if mid is value */
+	if (array[mid] == value)
+		return (mid);
+	else if (array[mid] > value)
+	{
+		if (mid != 0)
+			return (recurse_helper(array, left, mid - 1, value));
+		else
+			return (-1);
+	}
+	else
+		return (recurse_helper(array, mid + 1, right, value));
 }

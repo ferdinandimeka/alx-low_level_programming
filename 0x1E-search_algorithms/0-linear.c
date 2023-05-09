@@ -1,82 +1,23 @@
 #include "search_algos.h"
 
-int recurse_helper(int *arr, size_t size, int val, size_t idx);
-
 /**
- * linear_search - search for value in an integer array
- * @array: pointer to array of ints
- * @size: size of array
- * @value: value to locate
+ * lenear_search - searches for a value in an array of integers
+ * @array: pointer to the first element of the array
+ * @size: size of the array
+ * @value: value to search for
  *
- * Return: index of value; -1 if value not found
+ * Return: Index where value is located, or -1 if not found
  */
 int linear_search(int *array, size_t size, int value)
 {
-
+	size_t i = 0;
 	if (array == NULL)
 		return (-1);
-
-	return (recurse_helper(array, size, value, 0));
-}
-/**
- * recurse_helper - recursive implement of linear search
- * @arr: pointer to array of ints
- * @size: size of array
- * @val: value to locate
- * @idx: current index
- *
- * Return: index of value; -1 if value not found
- */
-int recurse_helper(int *arr, size_t size, int val, size_t idx)
-{
-	if (idx == size)
-		return (-1);
-
-	printf("Value checked array[%lu] = [%d]\n", idx, arr[idx]);
-
-	if (arr[idx] == val)
-		return (idx);
-
-	return (recurse_helper(arr, size, val, idx + 1));
-}
-#include "search_algos.h"
-
-int recurse_helper(int *arr, size_t size, int val, size_t idx);
-
-/**
- * linear_search - search for value in an integer array
- * @array: pointer to array of ints
- * @size: size of array
- * @value: value to locate
- *
- * Return: index of value; -1 if value not found
- */
-int linear_search(int *array, size_t size, int value)
-{
-
-	if (array == NULL)
-		return (-1);
-
-	return (recurse_helper(array, size, value, 0));
-}
-/**
- * recurse_helper - recursive implement of linear search
- * @arr: pointer to array of ints
- * @size: size of array
- * @val: value to locate
- * @idx: current index
- *
- * Return: index of value; -1 if value not found
- */
-int recurse_helper(int *arr, size_t size, int val, size_t idx)
-{
-	if (idx == size)
-		return (-1);
-
-	printf("Value checked array[%lu] = [%d]\n", idx, arr[idx]);
-
-	if (arr[idx] == val)
-		return (idx);
-
-	return (recurse_helper(arr, size, val, idx + 1));
+	for (i = 0; i < size; i++)
+	{
+		printf("value checked array[%lu] = [%d]\n", i, array[i]);
+		if (array[i] == value)
+			return (i);
+	}
+	return (-1);
 }

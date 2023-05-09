@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include "search_algos.h"
 
 int recurse_helper(int *arr, size_t size, int val, size_t idx);
@@ -40,7 +39,6 @@ int recurse_helper(int *arr, size_t size, int val, size_t idx)
 
 	return (recurse_helper(arr, size, val, idx + 1));
 }
-=======
 #include "search_algos.h"
 
 int recurse_helper(int *arr, size_t size, int val, size_t idx);
@@ -82,4 +80,3 @@ int recurse_helper(int *arr, size_t size, int val, size_t idx)
 
 	return (recurse_helper(arr, size, val, idx + 1));
 }
->>>>>>> 68f3192ac0d4e402c2a4a37fe8fee9e5beaee1c6
